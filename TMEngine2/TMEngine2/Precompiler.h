@@ -15,6 +15,8 @@
 
 #include "Noncopyable.h"
 
+#include "math/Vector.h"
+
 using namespace std;
 using namespace DirectX;
 

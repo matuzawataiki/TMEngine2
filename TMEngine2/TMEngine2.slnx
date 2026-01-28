@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="TMEngine2/TMEngine2.vcxproj" />
+  <Project Path="TMEngine2/TMEngine2.vcxproj" Id="ffeb6948-02d3-4973-91e5-37755af07a26" />
 </Solution>
