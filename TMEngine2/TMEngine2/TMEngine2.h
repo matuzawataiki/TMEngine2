@@ -1,6 +1,18 @@
 #pragma once
-class TMEngine2
+namespace nsTMEngine2
 {
-public:
+	class TMEngine2 : public Noncopyable
+	{
+	private:
+		static TMEngine2* instance;
+		TMEngine2();
+		~TMEngine2();
+	public:
+
+		void Initialize();
+
+		void Update();
+
 	};
 
+}

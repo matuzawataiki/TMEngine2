@@ -132,17 +132,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameObject\GameObjectManager.cpp" />
     <ClCompile Include="graphics\GraphicsEngine.cpp" />
+    <ClCompile Include="GameObject\IGameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TMEngine2.cpp" />
     <ClCompile Include="math\Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameObject\GameObjectManager.h" />
     <ClInclude Include="graphics\GraphicsEngine.h" />
+    <ClInclude Include="GameObject\IGameObject.h" />
     <ClInclude Include="Noncopyable.h" />
     <ClInclude Include="Precompiler.h" />
     <ClInclude Include="TMEngine2.h" />
     <ClInclude Include="math\Vector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

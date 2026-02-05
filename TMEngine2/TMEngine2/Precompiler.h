@@ -1,5 +1,6 @@
 #pragma once
 #include<Windows.h>
+#include <wrl/client.h> 
 #include<d3d12.h>
 #include<dxgi1_6.h>
 #include<DirectXMath.h>
@@ -9,13 +10,18 @@
 #pragma comment(lib,"dxgi.lib")
 #pragma comment(lib,"d3dcompiler.lib")
 
+#include <algorithm> 
+#include <iterator>  
 #include<vector>
+#include<array>
+#include<list>
 #include<iostream>
 #include<tchar.h>
 
 #include "Noncopyable.h"
 
 #include "math/Vector.h"
+#include "GameObject/IGameObject.h"
 
 using namespace std;
 using namespace DirectX;

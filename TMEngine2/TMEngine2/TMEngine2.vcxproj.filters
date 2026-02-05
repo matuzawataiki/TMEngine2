@@ -9,6 +9,12 @@
     <ClCompile Include="graphics\GraphicsEngine.cpp">
       <Filter>graphics</Filter>
     </ClCompile>
+    <ClCompile Include="GameObject\IGameObject.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\GameObjectManager.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Noncopyable.h" />
@@ -20,6 +26,12 @@
     <ClInclude Include="graphics\GraphicsEngine.h">
       <Filter>graphics</Filter>
     </ClInclude>
+    <ClInclude Include="GameObject\IGameObject.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\GameObjectManager.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="graphics">
@@ -28,5 +40,11 @@
     <Filter Include="math">
       <UniqueIdentifier>{ae26cf18-7bbb-4ada-bb95-260d4dfe41e1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject">
+      <UniqueIdentifier>{a7b2c00a-b835-4124-bf65-59652cfaa8ae}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
   </ItemGroup>
 </Project>

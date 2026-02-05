@@ -1,41 +1,44 @@
-
 #pragma once
+
+
 namespace nsTMEngine2
 {
+	using Microsoft::WRL::ComPtr;
+
 	struct Vertex{ 
 		XMFLOAT3 position; 
 		XMFLOAT4 color; 
 	};
-
+	
 	class GraphicsEngine : public Noncopyable
 	{
-		//ƒVƒ“ƒOƒ‹ƒgƒ“
+		//ã‚·ãƒ³ã‚°ãƒ«ãƒˆãƒ³
 	private:
-		static GraphicsEngine* instans;
+		static GraphicsEngine* instance;
 		GraphicsEngine();
 
-		//”ñŒöŠJ•Ï”
 	private:
-		WNDCLASSEX m_wndclassEx = {};	//ƒEƒBƒ“ƒhƒEƒNƒ‰ƒX
-		HWND m_hwnd = {};				//ƒEƒBƒ“ƒhƒEƒnƒ“ƒhƒ‹
+		WNDCLASSEX m_wndclassEx = {};	//ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚¯ãƒ©ã‚¹
+		HWND m_hwnd = {};				//ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒãƒ³ãƒ‰ãƒ«
 
 		MSG m_msg = {};
 
-		ID3D12Device* m_dev = nullptr;
-		IDXGIFactory6* m_dxgiFactory = nullptr;
-		ID3D12CommandAllocator* m_commandAllocator = nullptr;
-		ID3D12GraphicsCommandList* m_commandList = nullptr;
-		ID3D12CommandQueue* m_commandQueue = nullptr;
-		IDXGISwapChain4* m_swapchain = nullptr;
-		ID3D12DescriptorHeap* m_rtvheaps = nullptr;
-		std::vector<ID3D12Resource*> m_backBuffers;
-		ID3D12Fence* _fence = nullptr;
+		ComPtr<ID3D12Device> m_dev;
+		ComPtr<IDXGIFactory6> m_dxgiFactory;
+		ComPtr<ID3D12CommandAllocator> m_commandAllocator;
+		ComPtr<ID3D12GraphicsCommandList> m_commandList;
+		ComPtr<ID3D12CommandQueue> m_commandQueue;
+		ComPtr<IDXGISwapChain4> m_swapchain;
+		ComPtr<ID3D12DescriptorHeap> m_rtvheaps;
+		std::vector<ComPtr<ID3D12Resource>> m_backBuffers;
+		ComPtr<ID3D12Fence> _fence;
+		ComPtr<ID3D12RootSignature> m_rootsignature;
+		ComPtr<ID3D12PipelineState> m_pipelineState;
+		ComPtr<ID3DBlob> m_rootSigBlob;
 
-
-		//”ñŒöŠJŠÖ”
 	private:
 		/**
-		 * @brief ƒEƒBƒ“ƒhƒE‚Ì¶¬‰Šú‰»
+		 * @brief ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ç”ŸæˆåˆæœŸåŒ–
 		 */
 		void InitializeWindow();
 
@@ -51,10 +54,11 @@ namespace nsTMEngine2
 
 		void CreateRenderTargetView();
 
+		void SetGraphicsPipeline();
+
 		static LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam);
 
 
-		//ŒöŠJŠÖ”
 	public:
 		~GraphicsEngine();
 
@@ -64,23 +68,23 @@ namespace nsTMEngine2
 
 		void CreateTriangle();
 
+		void Draw(Vertex& vertex);
 
-
-		static void CreateInstans() {
-			if (instans == nullptr) {
-				instans = new GraphicsEngine;
+		static void CreateInstance() {
+			if (instance == nullptr) {
+				instance = new GraphicsEngine;
 			}
 		}
 
-		static void DeleteInstans() {
-			if (instans != nullptr) {
-				delete instans;
-				instans = nullptr;
+		static void DeleteInstance() {
+			if (instance != nullptr) {
+				delete instance;
+				instance = nullptr;
 			}
 		}
 
-		static GraphicsEngine* GetInstans() {
-			return instans;
+		static GraphicsEngine* GetInstance() {
+			return instance;
 		}
 	};
 
