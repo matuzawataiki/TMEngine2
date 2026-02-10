@@ -72,10 +72,14 @@ namespace nsTMEngine2
 			return objectVector;
 		}
 
+		void ExecuteUpdate();
+
+		void ExecuteRender();
+
 
 		static void CreateInstance() { m_instance = new GameObjectManager; }
 		static void DeleteInstance() { delete m_instance; }
-		static const GameObjectManager* GetInstance() { return m_instance; }
+		static GameObjectManager* GetInstance() { return m_instance; }
 	};
 
 	template<class T>

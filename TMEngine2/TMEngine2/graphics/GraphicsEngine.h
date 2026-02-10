@@ -44,7 +44,7 @@ namespace nsTMEngine2
 
 		void CreateFactory();
 
-		void CreateAdapter();
+		void CreateDevice();
 
 		void CreateCommands();
 

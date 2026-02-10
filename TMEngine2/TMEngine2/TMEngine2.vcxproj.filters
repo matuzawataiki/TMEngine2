@@ -15,6 +15,9 @@
     <ClCompile Include="GameObject\GameObjectManager.cpp">
       <Filter>GameObject</Filter>
     </ClCompile>
+    <ClCompile Include="graphics\FrameBuffer.cpp">
+      <Filter>graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Noncopyable.h" />
@@ -31,6 +34,9 @@
     </ClInclude>
     <ClInclude Include="GameObject\GameObjectManager.h">
       <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\FrameBuffer.h">
+      <Filter>graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

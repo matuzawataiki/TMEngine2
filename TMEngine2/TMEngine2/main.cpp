@@ -22,7 +22,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLin
 	MSG msg = {};
 
 
-	
+	nsTMEngine2::TMEngine2::CreateInstance();
+	nsTMEngine2::TMEngine2::GetInstance()->Initialize();
+
 
 	while (true) {
 		if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE)) {
@@ -33,7 +35,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLin
 			break;
 		}
 
-		nsTMEngine2::GraphicsEngine::GetInstance()->Execute();
+		nsTMEngine2::TMEngine2::GetInstance()->Update();
 
 
 	}

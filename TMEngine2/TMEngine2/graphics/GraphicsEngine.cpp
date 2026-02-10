@@ -27,7 +27,7 @@ namespace nsTMEngine2
 
 		CreateFactory();
 
-		CreateAdapter();
+		CreateDevice();
 
 		CreateCommands();
 
@@ -168,7 +168,7 @@ namespace nsTMEngine2
 		}
 	}
 
-	void GraphicsEngine::CreateAdapter()
+	void GraphicsEngine::CreateDevice()
 	{
 		std::vector<IDXGIAdapter*> adapters;	//アダプタのリスト
 		IDXGIAdapter* tmpAdapter = nullptr;		//使用するアダプタ

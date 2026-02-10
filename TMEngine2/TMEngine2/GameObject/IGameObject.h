@@ -44,6 +44,20 @@ namespace nsTMEngine2
 			return false;
 		}
 
+		void StartWrapper() {
+			if (m_isActive && !m_isStart && !m_isDead) {
+				if (Start()) {
+					m_isStart = true;
+				}
+			}
+		}
+
+		void UpdateWapper() {
+			if (m_isActive && m_isStart && !m_isDead) {
+				Update();
+			}
+		}
+
 	};
 
 }

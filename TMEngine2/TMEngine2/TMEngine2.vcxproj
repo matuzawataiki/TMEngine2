@@ -132,6 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="graphics\FrameBuffer.cpp" />
     <ClCompile Include="GameObject\GameObjectManager.cpp" />
     <ClCompile Include="graphics\GraphicsEngine.cpp" />
     <ClCompile Include="GameObject\IGameObject.cpp" />
@@ -140,6 +141,7 @@
     <ClCompile Include="math\Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="graphics\FrameBuffer.h" />
     <ClInclude Include="GameObject\GameObjectManager.h" />
     <ClInclude Include="graphics\GraphicsEngine.h" />
     <ClInclude Include="GameObject\IGameObject.h" />

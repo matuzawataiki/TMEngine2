@@ -5,7 +5,7 @@
 
 namespace nsTMEngine2 
 {
-	TMEngine2* TMEngine2::instance = nullptr;
+	TMEngine2* TMEngine2::m_instance = nullptr;
 
 	TMEngine2::TMEngine2()
 	{
